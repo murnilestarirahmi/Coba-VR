@@ -1,0 +1,113 @@
+{
+    "PanoramaStudioViewerParams": {
+        "panoramaStudioViewer": {
+            "actions": [
+                {
+                    "func": "function(){ var enabled = this.viewer.gyroscopeEnabled(); var gb = this.get('gyrobutton'); if (gb){ gb.skin = enabled ? gb.enabledskin : gb.disabledskin; gb.updateSkins(); } }",
+                    "id": "updateGyroButton"
+                },
+                {
+                    "func": "function(){ if (!this.viewer.fullEquirectangular()) return; this.viewer.panTo(this.viewer.getView().pan, 0, 100, 1.0, 0, 'easeInOutSine', true); this.tween({'time': 1.0, 'lp': 0.0, 'transition': 'easeInOutSine', 'onInit' : function(a, dstParams){ a.lp = a.viewer.fisheyeDistortion(); }, 'onUpdate': function(a){ a.viewer.setFisheyeDistortion(a.lp); }}); }",
+                    "id": "leaveLittlePlanet"
+                },
+                {
+                    "func": "function(){ if (!this.viewer.fullEquirectangular()) return; this.viewer.panTo(this.viewer.getView().pan + 90, 90, 150, 1.0, 0, 'easeInOutSine', true); this.tween({'time': 1.0, 'lp': 1.0, 'transition': 'easeInOutSine', 'onInit' : function(a, dstParams){ a.lp = a.viewer.fisheyeDistortion(); }, 'onUpdate': function(a){ a.viewer.setFisheyeDistortion(a.lp); }}); }",
+                    "id": "enterLittlePlanet"
+                },
+                {
+                    "func": "function(a){ var id = this.viewer.currentMBId; if (!!id && (a.id != id)){ this.viewer.action('hideMessage'); } if (a.id != id){ var s = this.viewer.get('globalData'); if (s && s.messageBoxStyle){ a.style = s.messageBoxStyle; } this.viewer.currentMBId = null; if (!this.viewer.isVRModeEnabled()){ this.viewer.add('textbox', a); this.viewer.currentMBId = a.id; } } }",
+                    "id": "showMessage"
+                },
+                {
+                    "func": "function(){ if (this.viewer.currentMBId) this.viewer.remove(this.viewer.currentMBId); this.viewer.currentMBId = null; }",
+                    "id": "hideMessage"
+                },
+                {
+                    "func": "function(a){ var id = this.viewer.currentMBId; if (a.id != id){ this.viewer.action('showMessage', a); } else { this.viewer.action('hideMessage'); } }",
+                    "id": "toggleMessage"
+                }
+            ],
+            "button": [
+                {
+                    "align": "leftbottom",
+                    "height": 24,
+                    "id": "showTbButton",
+                    "onclick": "function(){ if (!this.allowClick) return; this.allowClick = false; var tb = this.get('toolbar'); tb.setVisible(true); tb.style = 'transform-origin: 50% 100% 0px; transform: translate(0px,0px) translateZ(10000px) perspective(800px) rotateX(0deg); background: rgba(0,0,0,0.5); transition: transform 500ms;'; tb.updateStyles(); this.tween({ 'delay': 0.5, 'time': 0.01, 'onComplete': function(a){ a.setVisible(false); a.get('hideTbButton').allowClick = true; } }); this.style = 'transform-origin: 50% 100% 0px; transform: translate(0px,0px) translateZ(10000px) perspective(800px) rotateX(90deg); transition: transform 500ms;'; this.updateStyles(); }",
+                    "oninit": "function(){ this.setVisible(true); this.allowClick = true; }",
+                    "skin": "shadow(4,0,0,rgba(0,0,0,1));shadow(3,0,0,rgba(0,0,0,1));comp(1.0);copy(defaultSkin,128,192,64,64,0,0,24,24)",
+                    "style": "transform-origin: 50% 100% 0px; transform: translate(0px,0px) translateZ(10000px) perspective(800px) rotateX(0deg); transition: transform 500ms;",
+                    "styleactive": "background-color:rgba(255, 255, 255, 0.25); box-shadow: 0px 0px 9px 8px rgba(255, 255, 255, 0.25);",
+                    "stylehover": "background-color:rgba(255, 255, 255, 0.15); box-shadow: 0px 0px 9px 8px rgba(255, 255, 255, 0.15);",
+                    "width": 24,
+                    "xoff": 0,
+                    "yoff": 0
+                }
+            ],
+            "buttonBox": [
+                {
+                    "align": "bottom",
+                    "button": [
+                        {
+                            "align": "left",
+                            "id": "hideTbButton",
+                            "index": 1,
+                            "onclick": "function(){ if (!this.allowClick) return; this.allowClick = false; var tb = this.get('toolbar'); tb.style = 'transform-origin: 50% 100% 0px; transform: translate(0px,0px) translateZ(10000px) perspective(800px) rotateX(90deg); background: rgba(0,0,0,0.5); transition: transform 500ms;'; tb.updateStyles(); tb.tween({'delay': 0.5, 'time': 0.01, 'onComplete': function(a){ a.setVisible(false); a.get('showTbButton').allowClick = true; } }); var tbb = this.get('showTbButton'); tbb.setVisible(true); tbb.style ='transform-origin: 50% 100% 0px; transform: translate(0px,0px) translateZ(10000px) perspective(800px) rotateX(90deg); transition: transform 500ms;'; tbb.updateStyles(); tbb.tween({'delay': 0.01, 'time': 0.01, 'onComplete': function(a){ a.style ='transform-origin: 50% 100% 0px; transform: translate(0px,0px) translateZ(10000px) perspective(800px) rotateX(0deg); transition: transform 500ms;'; a.updateStyles(); } });}",
+                            "oninit": "function(){ this.allowClick = false; }",
+                            "priority": 3,
+                            "skin": "shadow(3,0,0,rgba(0,0,0,1));copy(defaultSkin,0,192,64,64,0,0,28,28);",
+                            "xoff": 8,
+                            "yoff": 0
+                        },
+                        {
+                            "align": "center",
+                            "id": "infobutton",
+                            "index": 5,
+                            "onclick": "function(){ var d=this.viewer.get('localData'); d&&(d=d.infoTextBox); if(!d){ var d=this.viewer.get('globalData'); d&&(d=d.infoTextBox); } if (!!d){this.viewer.action('toggleMessage',d);} }",
+                            "onscenechanged": "function(){ var d=this.viewer.get('localData'); var g=this.viewer.get('globalData'); var o=d&&d.infoTextBox || g&&g.infoTextBox; this.setVisible(!!o); }",
+                            "priority": 3,
+                            "skin": "shadow(3,0,0,rgba(0,0,0,1));copy(defaultSkin,0,0,64,64,0,0,28,28);",
+                            "xoff": 0,
+                            "yoff": 0
+                        },
+                        {
+                            "align": "center",
+                            "index": 7,
+                            "priority": 0,
+                            "skin": "shadow(3,0,0,rgba(0,0,0,1));copy(defaultSkin,128,64,64,64,0,0,28,28);",
+                            "type": 1,
+                            "xoff": 0,
+                            "yoff": 0
+                        },
+                        {
+                            "align": "center",
+                            "index": 8,
+                            "priority": 0,
+                            "skin": "shadow(3,0,0,rgba(0,0,0,1));copy(defaultSkin,0,64,64,64,0,0,28,28);",
+                            "type": 2,
+                            "xoff": 0,
+                            "yoff": 0
+                        },
+                        {
+                            "align": "center",
+                            "index": 9,
+                            "priority": 0,
+                            "skin": "shadow(3,0,0,rgba(0,0,0,1));copy(defaultSkin,192,64,64,64,0,0,28,28);",
+                            "type": 3,
+                            "xoff": 0,
+                            "yoff": 0
+                        }
+                    ],
+                    "id": "toolbar",
+                    "style": "background: rgba(0,0,0,0.5); transform: translate(0px,0px) translateZ(10000px) perspective(800px) rotateX(0deg); transition: transform 500ms;",
+                    "type": "toolbar"
+                }
+            ],
+            "image": {
+                "height": 4096,
+                "src": "file:///C:/Program Files/PanoramaStudio/PanoramaStudioViewer/images/panorama/1_1_2_1_pano2.jpg",
+                "width": 8192
+            },
+            "init": "function(a){ var e = this.get('viewer'); if (!e.isVRModeEnabled()) { e.setVRMode(true); } if (!this.get('globalData')) { this.set('globalData', {}); } var d = this.get('globalData'); if (!!d && !!d.infoTextBox) { e.add('textbox', d.infoTextBox); } e.set('init', true); this.viewer = e; }"
+        }
+    }
+}

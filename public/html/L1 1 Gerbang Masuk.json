@@ -1,0 +1,237 @@
+{
+    "PanoramaStudioViewerParams": {
+        "panoramaStudioViewer": {
+            "key": "",
+            "control": {
+                "mousemode": "drag",
+                "touchmode": "drag"
+            },
+            "data": {
+                "id": "globalData",
+                "messageBoxStyle": "min-width: 25%; text-shadow: none; line-height: 100%; color:#ffffff; font-family: Arial,Helvetica,Sans-Serif; font-size: 15px; font-weight: 100; text-align:left; box-shadow: 4px 4px 1px 0px rgba(0,0,0,0.33);background: rgba(0,0,0,0.66);"
+            },
+            "include": [
+                {
+                    "src": "L1 1 Gerbang Masuk_controls.json"
+                }
+            ],
+            "node": {
+                "autoplay": {
+                    "pan": 2,
+                    "restart": 5,
+                    "status": "on",
+                    "tilt": 0,
+                    "zoom": 1
+                },
+                "camera": {
+                    "maxpan": 359.99999999999994,
+                    "maxtilt": 30.192068683462146,
+                    "minpan": 0,
+                    "mintilt": -30.192068683462146
+                },
+                "hotspot": [
+                    {
+                        "animation": {
+                            "duration": 1.0667,
+                            "frames": 32,
+                            "height": 42,
+                            "width": 102
+                        },
+                        "bitmap": "pap_perspectiveArrow.png",
+                        "bitmaptype": "embedded",
+                        "embeddedwidth": 11.70195624232292,
+                        "href": "L1 2 Gerbang Masuk 2.json",
+                        "opacity": "1.00;1.00",
+                        "position": "218.7848,17.5507",
+                        "rotate": 0,
+                        "target": "myself",
+                        "transition": "zoomin,2;blend,2",
+                        "unit": "deg"
+                    },
+                    {
+                        "animation": {
+                            "duration": 1.0667,
+                            "frames": 32,
+                            "height": 42,
+                            "width": 102
+                        },
+                        "bitmap": "pap_perspectiveArrow.png",
+                        "bitmaptype": "embedded",
+                        "embeddedwidth": 12.345352470874785,
+                        "href": "IGD Masuk.json",
+                        "opacity": "1.00;1.00",
+                        "position": "19.7354,18.6084",
+                        "rotate": 2.074836015701294,
+                        "target": "myself",
+                        "textbox": {
+                            "align": "top",
+                            "style": "color:#ffffff; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: normal; text-align:center; display: inline;",
+                            "text": "Menuju ke IGD"
+                        },
+                        "transition": "zoomin,2;blend,2",
+                        "unit": "deg"
+                    },
+                    {
+                        "animation": {
+                            "duration": 1.28,
+                            "frames": 32,
+                            "height": 64,
+                            "width": 64
+                        },
+                        "bitmap": "pap_rings.png",
+                        "bitmaptype": "embedded",
+                        "embeddedwidth": 2.1359154582023616,
+                        "href": "U1 1 Selasar Depan 1.json",
+                        "opacity": "1.00;1.00",
+                        "position": "318.7534,7.0671",
+                        "rotate": 0,
+                        "target": "myself",
+                        "textbox": {
+                            "align": "top",
+                            "style": "color:#ffffff; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: normal; text-align:center; display: inline;",
+                            "text": "Masuk ke Gedung Utama"
+                        },
+                        "transition": "zoomin,2;blend,2",
+                        "unit": "deg"
+                    },
+                    {
+                        "bitmap": "pap_marker_white_shadow.png",
+                        "bitmaptype": "embedded",
+                        "embeddedwidth": 3.3524363860487933,
+                        "href": "",
+                        "opacity": "1.00;1.00",
+                        "position": "296.8386,4.7113",
+                        "rotate": 0,
+                        "target": "",
+                        "transition": "zoomin,2;blend,2",
+                        "unit": "deg"
+                    },
+                    {
+                        "bitmap": "pap_marker_white_shadow.png",
+                        "bitmaptype": "embedded",
+                        "embeddedwidth": 2.097858767956495,
+                        "href": "",
+                        "opacity": "1.00;1.00",
+                        "position": "329.5291,7.1466",
+                        "rotate": 4.858654975891113,
+                        "target": "",
+                        "transition": "zoomin,2;blend,2",
+                        "unit": "deg"
+                    }
+                ],
+                "hotspots": {
+                    "visible": true
+                },
+                "id": "L1 1 Gerbang Masuk",
+                "image": {
+                    "baseindex": 1,
+                    "bitmap": [
+                        {
+                            "back": {
+                                "src": "L1 1 Gerbang Masuk_tiles/L1 1 Gerbang Masuk_t_1b_%y_%x.jpg"
+                            },
+                            "down": {
+                                "src": "L1 1 Gerbang Masuk_tiles/L1 1 Gerbang Masuk_t_1d_%y_%x.jpg"
+                            },
+                            "front": {
+                                "src": "L1 1 Gerbang Masuk_tiles/L1 1 Gerbang Masuk_t_1f_%y_%x.jpg"
+                            },
+                            "height": 2839,
+                            "left": {
+                                "src": "L1 1 Gerbang Masuk_tiles/L1 1 Gerbang Masuk_t_1l_%y_%x.jpg"
+                            },
+                            "right": {
+                                "src": "L1 1 Gerbang Masuk_tiles/L1 1 Gerbang Masuk_t_1r_%y_%x.jpg"
+                            },
+                            "tilesize": 480,
+                            "up": {
+                                "src": "L1 1 Gerbang Masuk_tiles/L1 1 Gerbang Masuk_t_1u_%y_%x.jpg"
+                            },
+                            "width": 2839
+                        },
+                        {
+                            "back": {
+                                "src": "L1 1 Gerbang Masuk_tiles/L1 1 Gerbang Masuk_t_2b_%y_%x.jpg"
+                            },
+                            "down": {
+                                "src": "L1 1 Gerbang Masuk_tiles/L1 1 Gerbang Masuk_t_2d_%y_%x.jpg"
+                            },
+                            "front": {
+                                "src": "L1 1 Gerbang Masuk_tiles/L1 1 Gerbang Masuk_t_2f_%y_%x.jpg"
+                            },
+                            "height": 1420,
+                            "left": {
+                                "src": "L1 1 Gerbang Masuk_tiles/L1 1 Gerbang Masuk_t_2l_%y_%x.jpg"
+                            },
+                            "right": {
+                                "src": "L1 1 Gerbang Masuk_tiles/L1 1 Gerbang Masuk_t_2r_%y_%x.jpg"
+                            },
+                            "tilesize": 480,
+                            "up": {
+                                "src": "L1 1 Gerbang Masuk_tiles/L1 1 Gerbang Masuk_t_2u_%y_%x.jpg"
+                            },
+                            "width": 1420
+                        },
+                        {
+                            "back": {
+                                "src": "L1 1 Gerbang Masuk_tiles/L1 1 Gerbang Masuk_t_3b_%y_%x.jpg"
+                            },
+                            "down": {
+                                "src": "L1 1 Gerbang Masuk_tiles/L1 1 Gerbang Masuk_t_3d_%y_%x.jpg"
+                            },
+                            "front": {
+                                "src": "L1 1 Gerbang Masuk_tiles/L1 1 Gerbang Masuk_t_3f_%y_%x.jpg"
+                            },
+                            "height": 710,
+                            "left": {
+                                "src": "L1 1 Gerbang Masuk_tiles/L1 1 Gerbang Masuk_t_3l_%y_%x.jpg"
+                            },
+                            "right": {
+                                "src": "L1 1 Gerbang Masuk_tiles/L1 1 Gerbang Masuk_t_3r_%y_%x.jpg"
+                            },
+                            "tilesize": 480,
+                            "up": {
+                                "src": "L1 1 Gerbang Masuk_tiles/L1 1 Gerbang Masuk_t_3u_%y_%x.jpg"
+                            },
+                            "width": 710
+                        },
+                        {
+                            "back": {
+                                "src": "L1 1 Gerbang Masuk_tiles/L1 1 Gerbang Masuk_t_4b_%y_%x.jpg"
+                            },
+                            "down": {
+                                "src": "L1 1 Gerbang Masuk_tiles/L1 1 Gerbang Masuk_t_4d_%y_%x.jpg"
+                            },
+                            "front": {
+                                "src": "L1 1 Gerbang Masuk_tiles/L1 1 Gerbang Masuk_t_4f_%y_%x.jpg"
+                            },
+                            "height": 355,
+                            "left": {
+                                "src": "L1 1 Gerbang Masuk_tiles/L1 1 Gerbang Masuk_t_4l_%y_%x.jpg"
+                            },
+                            "right": {
+                                "src": "L1 1 Gerbang Masuk_tiles/L1 1 Gerbang Masuk_t_4r_%y_%x.jpg"
+                            },
+                            "tilesize": 480,
+                            "up": {
+                                "src": "L1 1 Gerbang Masuk_tiles/L1 1 Gerbang Masuk_t_4u_%y_%x.jpg"
+                            },
+                            "width": 355
+                        }
+                    ],
+                    "multilevel": true,
+                    "preview": {
+                        "src": "L1 1 Gerbang Masuk_tiles/L1 1 Gerbang Masuk_preview.jpg"
+                    },
+                    "projection": "cubic"
+                },
+                "view": {
+                    "hfov": 116,
+                    "pan": 293.88,
+                    "tilt": 0
+                }
+            },
+            "version": "4.1"
+        }
+    }
+}
